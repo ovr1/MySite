@@ -1,0 +1,16 @@
+{% extends "home.html" %}
+{% block title %}Запись {{ object.id }}{% endblock %}
+
+{% block main_content %}
+<h1 xmlns:zapis="http://www.w3.org/1999/xhtml" xmlns:zapis="http://www.w3.org/1999/xhtml">Запись</h1>
+  <p><b>Процедура</b>: {{ object }}</p>
+  <ul>
+    <li>
+      {{ object.is_completed|yesno:"Выполнено,Не выполнено" }}
+    </li>
+    <li><i class="far fa-calendar-alt"></i>&nbsp;Создана: {{ object.created|date:"Y-b-d H:i" }}</li>
+    <li><i class="far fa-clock"></i>&nbsp;Последнее изменение: {{ object.updated }}</li>
+    <li><i class="far fa-edit"></i>&nbsp;<a href="{% url "zapis:edit" pk=object.pk %}">Редактировать</a></li>
+  </ul>
+  <i class="fas fa-clipboard-list"></i>&nbsp;<a href="{% url "zapis:list" %}">Назад к списку</a>
+{% endblock %}

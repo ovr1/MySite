@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Index.apps.IndexConfig',
+    "zapis.apps.TasksConfig",
+    "accounts.apps.AccountsConfig",
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -123,8 +126,16 @@ TEMPLATE_DIRS = (
 )
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "GalinSite/../static"),
+    os.path.join(BASE_DIR, "MySite/../static"),
 ]
-
 STATIC_ROOT = os.path.join(BASE_DIR, '../static/')
 STATIC_URL = '/static/'
+LOGIN_REDIRECT_URL = "zapis:list"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "some-user@gmail.com")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "lol password")
+EMAIL_PORT = int(os.environ.get("EMAIL_PORT", "587"))
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS", 'false') != "false"

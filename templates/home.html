@@ -1,11 +1,11 @@
 {% load static %}
-<html>
+<html xmlns:zapis="http://www.w3.org/1999/xhtml" lang="">
   <head>
     <title>{% block title %}Туду-дуду{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -24,8 +24,8 @@
 
               <ul>
                 <li><i class="far fa-user"></i>&nbsp;<a href="{% url "edit" %}">профиль</a></li>
-                <li><i class="fa fa-plus"></i>&nbsp;<a href="{% url "tasks:create" %}">добавить задачу</a></li>
-                <li><i class="fas fa-clipboard-list"></i>&nbsp;<a href="{% url "tasks:list" %}">задачи</a></li>
+                <li><i class="fa fa-plus"></i>&nbsp;<a href="{% url "zapis:create" %}">Сделать запись</a></li>
+                <li><i class="fas fa-clipboard-list"></i>&nbsp;<a href="{% url "zapis:list" %}">Записи</a></li>
                 <li><i class="fa fa-sign-out-alt"></i>&nbsp;<a href="{% url "logout" %}">выйти</a></li>
               </ul>
             {% endif %}
