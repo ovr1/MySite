@@ -66,6 +66,6 @@ def edit(request):
         "accounts/edit.html",
         {"user_form": user_form, "profile_form": profile_form},
     )
-def profile(request):
-    return render(request, "zapis/lists.html")
+#def profile(request):
+#    return render(request, "zapis/lists.html")
 

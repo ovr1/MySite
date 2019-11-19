@@ -1,8 +1,8 @@
-import zapis
+#import zapis
 from accounts import views
 from django.contrib.auth import views as auth_views
 from django.urls import path
-from zapis.views import zapis_by_tag
+#from zapis.views import zapis_by_tag
 
 urlpatterns = [
     # path('login/', views.LoginView.as_view(), name='login'),
@@ -36,5 +36,5 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
-    path("profile/", zapis.views.zapis_by_tag, name="list"),
+#    path("profile/", zapis.views.zapis_by_tag, name="list"),
 ]
