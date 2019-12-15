@@ -7,6 +7,7 @@
   <p>Воспользуйтесь следующей формой:</p>
   <form action="." method="post">
     {{ user_form.as_p }}
+    {{ user.get_profile.about }}
     {% csrf_token %}
     <p><input type="submit" value="Создать"></p>
   </form>
