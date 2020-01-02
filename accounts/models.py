@@ -34,21 +34,6 @@ class PhoneField(MultiValueField):
     def compress(self, values):
         return '+7' + values[0] + values[1]  #Собственно, стандартизация строки номера эстетики ради
 
-SEX_1 = 1
-SEX_2 = 2
-SEX_3 = 3
-SEX_4 = 4
-
-SEX_CHOICES = [
-    (SEX_1, 'Нет'),
-    (SEX_2, 'Воспалительные заболевания'),
-    (SEX_3, 'Обострение хронических заболеваний'),
-    (SEX_4, 'Месячные')
-]
-
-
-
-
 
 class Profile(models.Model):
     objects = None
@@ -59,7 +44,7 @@ class Profile(models.Model):
     gip = models.BooleanField(blank=True, null=True, verbose_name = 'Гипертония' )
     gipS = models.CharField(max_length=1, blank=True, null=True, verbose_name = 'Степень гипертонии')
     var = models.BooleanField(blank=True, null=True, verbose_name = 'Варикозное расширение вен, нижних конечностей' )
-    sex = models.IntegerField(choices=SEX_CHOICES, blank=True, null=True, verbose_name = 'Противорпоказания')
+
 
     def __str__(self):
         return "Профиль пользователя %s" % self.user.username

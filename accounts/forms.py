@@ -33,7 +33,7 @@ class UserEditForm(forms.ModelForm):
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ("p_num", "birthdate", "bio", "gip", "gipS", "var", "sex")
+        fields = ("p_num", "birthdate", "bio", "gip", "gipS", "var")
 
 
 
