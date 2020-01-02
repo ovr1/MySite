@@ -9,7 +9,7 @@
   {% else %}
     <p>введите логин/пароль:</p>
   {% endif %}
-  <form action="." method="POST" class="login">
+  <form action="" method="POST" class="login">
     {{ form.as_p }}
     {% csrf_token %}
     <input type="hidden" name="next" value="{{ next }}" />

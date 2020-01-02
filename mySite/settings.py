@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-AUTH_PROFILE_MODULE = 'list.UserProfile'
+AUTH_PROFILE_MODULE = 'list.Profile'
 
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),

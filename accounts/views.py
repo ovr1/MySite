@@ -39,7 +39,7 @@ def register(request):
             new_user.save()
 
             return render(
-                request, "accounts/registration_complete.html", {"new_user": new_user}
+                request, "accounts/registration_profile.html", {"new_user": new_user}
             )
     else:
         form = RegistrationForm()
@@ -57,6 +57,11 @@ def edit(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
+
+            return render(
+                request, "zapis/list.html"
+            )
+
     else:
         user_form = UserEditForm(instance=request.user)
         profile_form = ProfileEditForm(instance=request.user.profile)

@@ -23,7 +23,7 @@
               <p>Login: {{ user.username }}</p>
 
               <ul>
-                <li><i class="far fa-user"></i>&nbsp;<a href="{% url "edit" %}">профиль</a></li>
+
                 <li><i class="fa fa-plus"></i>&nbsp;<a href="{% url "zapis:create" %}">Сделать запись</a></li>
                 <li><i class="fas fa-clipboard-list"></i>&nbsp;<a href="{% url "zapis:list" %}">Записи</a></li>
                 <li><i class="fa fa-sign-out-alt"></i>&nbsp;<a href="{% url "logout" %}">выйти</a></li>

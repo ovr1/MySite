@@ -1,14 +1,12 @@
 {% extends "home.html" %}
-
-{% block title %}Зарегистрироватьсяt{% endblock %}
-
+{% block title %}Зарегистрироваться{% endblock %}
 {% block main_content %}
   <h1>Создать аккаунт</h1>
   <p>Воспользуйтесь следующей формой:</p>
-  <form action="." method="post">
+   <form action="." method="post" enctype="multipart/form-data">
     {{ user_form.as_p }}
-    {{ user.get_profile.about }}
     {% csrf_token %}
-    <p><input type="submit" value="Создать"></p>
+
+    <button type="submit">Сохранить</button>
   </form>
 {% endblock %}

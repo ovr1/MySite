@@ -2,6 +2,7 @@
 from accounts import views
 from django.contrib.auth import views as auth_views
 from django.urls import path
+from django.conf.urls import include
 #from zapis.views import zapis_by_tag
 
 urlpatterns = [
@@ -36,5 +37,6 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name="password_reset_complete",
     ),
+    path('accounts/', include('django.contrib.auth.urls')),
 #    path("profile/", zapis.views.zapis_by_tag, name="list"),
 ]
